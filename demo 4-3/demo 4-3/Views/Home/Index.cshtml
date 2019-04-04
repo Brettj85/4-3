@@ -1,0 +1,17 @@
+﻿@*Model Defination*@
+
+@model List<demo_4_3.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1></h1>
+@foreach (var v in Model)
+{
+    <div>
+        @v.vin<br/>@v.Model<br/>@v.color<br/>@v.NumberOfWheels
+    </div>
+    <hr/>
+}
+
