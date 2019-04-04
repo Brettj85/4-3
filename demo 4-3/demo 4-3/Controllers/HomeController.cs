@@ -9,14 +9,22 @@ namespace demo_4_3.Controllers
 {
     public class HomeController : Controller
     {
-        private List<Vehicle> Vehicles = new List<Vehicle>()
+        private List<Vehicle> vehicles = new List<Vehicle>()
         {
-            new Vehicle {color = "red", Model = "Cruze", NumberOfWheels = 4, vin = 123456}
+            new Vehicle {Color = "red", Model = "Cruze", NumberOfWheels = 4, Vin = 123456}
         };
+        
         public IActionResult Index()
         {
             //ViewBag.Vehicles = Vehicles;
-            return View(Vehicles);
+            return View(vehicles);
+        }
+
+        [HttpPost]
+        public IActionResult AddVehicle(Vehicle newVehicle)
+        {
+            vehicles.Add(newVehicle);
+            return View("Index", vehicles);
         }
     }
 }

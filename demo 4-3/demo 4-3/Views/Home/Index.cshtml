@@ -10,8 +10,29 @@
 @foreach (var v in Model)
 {
     <div>
-        @v.vin<br/>@v.Model<br/>@v.color<br/>@v.NumberOfWheels
+        @v.Vin<br/>@v.Model<br/>@v.Color<br/>@v.NumberOfWheels
     </div>
     <hr/>
 }
+
+<h1>Add a new vehicle</h1>
+
+<form asp-action="AddVehicle" asp-controller="Home" method="post">
+    <label>Vin</label>
+    <input name="vin"/>
+    <br />
+
+    <label>Model</label>
+    <input name="Model" />
+    <br />
+
+    <label>Color</label>
+    <input Name="Color"/>
+    <br />
+
+    <label>NumberOfWheels</label>
+    <input name="NumberOfWheels"/>
+    <br/>
+    <button type="Submit">Add Vehicle</button>
+</form>
 
